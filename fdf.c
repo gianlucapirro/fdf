@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.42.fr>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/17 13:35:24 by gpirro        #+#    #+#                 */
-/*   Updated: 2022/04/04 16:33:49 by gpirro        ########   odam.nl         */
+/*   Updated: 2022/04/19 10:36:29 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,11 @@ error message and exits the program.
 void	error_handling(int argc, int fd)
 {
 	if (argc == 1)
-		ft_printf("ERROR: \"NO MAP WAS PASSED AS AN ARGUMENT\"\n");
+		write(2, "ERROR: \"NO MAP WAS PASSED AS AN ARGUMENT\"\n", 43);
 	else if (argc > 2)
-		ft_printf("ERROR \"PLEASE GIVE ONLY ONE MAP AS AN ARGUMENT\"\n");
+		write(2, "ERROR \"PLEASE GIVE ONLY ONE MAP AS AN ARGUMENT\"\n", 49);
 	else if (fd == -1)
-		ft_printf("ERROR \"MAP WAS NOT FOUND\"\n");
+		write(2, "ERROR \"MAP WAS NOT FOUND\"\n", 27);
 	else
 		return ;
 	exit (0);

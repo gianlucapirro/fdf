@@ -6,7 +6,7 @@
 #    By: gpirro <gpirro@student.42.fr>                +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/11/08 15:30:05 by gpirro        #+#    #+#                  #
-#    Updated: 2022/04/04 16:33:18 by gpirro        ########   odam.nl          #
+#    Updated: 2022/04/19 10:37:29 by gpirro        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,6 @@ SRCS	=	fdf.c\
 			get_next_line.c\
 			list.c
 LIBFT	= 	libft/libft.a
-PRINTF	=	printf/libftprintf.a
 OBJS	= 	${SRCS:.c=.o}
 CC		= 	gcc
 CFLAGS	= 	-g #-Wall -Wextra -Werror -g
@@ -31,7 +30,7 @@ OBJ_DIR	=	./objs/
 all: ${LIBFT} ${PRINTF} ${NAME}
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME) $(LIBFT) $(PRINTF)
+	$(CC) $(OBJS) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME) $(LIBFT)
 	mkdir -p ${OBJ_DIR}
 	mv *.o ${OBJ_DIR}
 
@@ -41,17 +40,13 @@ $(NAME): $(OBJS)
 ${LIBFT}:
 	make -C libft
 
-${PRINTF}:
-	make -C printf
-
 clean:
 	make clean -C libft
-	make clean -C printf
 	rm -rf ${OBJ_DIR}
 	rm -f ${OBJS}
 
 fclean: clean
-	rm -f ${NAME} ${LIBFT} ${PRINTF}
+	rm -f ${NAME} ${LIBFT}
 
 re: fclean all
 
