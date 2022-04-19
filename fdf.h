@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.42.fr>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/17 13:40:07 by gpirro        #+#    #+#                 */
-/*   Updated: 2022/04/19 10:36:56 by gpirro        ########   odam.nl         */
+/*   Updated: 2022/04/19 14:01:52 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,8 @@ typedef enum e_keys
 	D		= 2
 }	t_keys;
 
-# define WINDOW_WIDTH 1500
-# define WINDOW_HEIGHT 1500
+# define WINDOW_WIDTH 2560
+# define WINDOW_HEIGHT 1600
 # define PI 3.14159
 
 t_map	*handle_input(int fd);

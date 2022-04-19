@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.42.fr>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/17 16:26:06 by jsiegers      #+#    #+#                 */
-/*   Updated: 2022/04/04 16:36:18 by gpirro        ########   odam.nl         */
+/*   Updated: 2022/04/19 17:57:28 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int	*parse_row(char *line, int len)
 		row[i] = ft_atoi(split[i]);
 		i++;
 	}
+	ft_farr((void **)split);
 	return (row);
 }
 
@@ -69,6 +70,7 @@ t_map	*handle_input(int fd)
 	while (line)
 	{
 		row = parse_row(line, map->w);
+		free(line);
 		list_add(list, row);
 		line = get_next_line(fd);
 	}
