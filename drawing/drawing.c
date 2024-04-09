@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.42.fr>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/24 15:09:45 by gpirro        #+#    #+#                 */
-/*   Updated: 2022/03/28 15:29:28 by gpirro        ########   odam.nl         */
+/*   Updated: 2022/04/21 10:54:10 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  */
 double	deg_to_rad(double deg)
 {
-	return ((PI / 180 ) * deg);
+	return ((PI / 180) * deg);
 }
 
 /*

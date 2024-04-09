@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: gpirro <gpirro@student.42.fr>                +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/02 17:09:12 by jsiegers      #+#    #+#                 */
-/*   Updated: 2022/03/28 16:00:54 by gpirro        ########   odam.nl         */
+/*   Created: 2022/04/21 10:54:58 by gpirro        #+#    #+#                 */
+/*   Updated: 2022/04/21 14:00:00 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	free_elems(t_elem *elem, int free_data)
 	free(elem);
 }
 
-void	free_list(t_list *list, int	free_data)
+void	free_list(t_list *list, int free_data)
 {
 	if (list->top)
 		free_elems(list->top, free_data);
@@ -47,7 +47,7 @@ void	*list_add(t_list *list, void *data)
 
 	new_elem = malloc(sizeof(t_elem));
 	if (new_elem == 0)
-		return (0);
+		exit (0);
 	new_elem->data = data;
 	new_elem->next = 0;
 	if (list->top == NULL)
